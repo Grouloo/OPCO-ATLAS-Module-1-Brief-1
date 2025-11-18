@@ -44,7 +44,9 @@ Ce graphique représente l'évolution de la valeur de _loss_, c'est-à-dire une 
 
 ![loss](./media/loss.png)
 
-Nous pouvons voir que la loss diminue drastiquement au cours de l'entraînement, passant de $3.1 * 10^7$ (0 epochs) à moins de $2.1 * 10^7$ (49 epochs)
+Nous pouvons voir que la loss diminue drastiquement au cours de l'entraînement, passant de $3.1 * 10^7$ (0 epochs) à $2.1 * 10^7$ (49 epochs).
+
+En revanche, elle semble atteindre une limite vers $2.1 * 10^7$, ce qui signifie qu'entraîner encore plus longuement ce modèle n'aura qu'un effet de plus en plus négligeable sur sa qualité.
 
 Nous pouvons également remarquer que la valeur de loss lors de la validation (prédiction sur les données de test) est généralement plus élevée que celle de l'entraînement (prédiction sur les données d'entraînement)
 
