@@ -22,14 +22,14 @@ Le programme effectue 3 évaluations successives :
 2. La deuxième évaluation utilise un jeu de données de test
 3. La troisième évaluation utilise une version du modèle ré-entraînée plus longuement, évaluée sur les données de test.
 
+### Métriques
+
 Pour chaque évaluation, le programme nous donne l'erreur quadratique moyenne (MSE), l'erreur absolue moyenne (MAE), et le coefficient de détermination (R2).
 
 La MSE et la MAE nous permettent de quantifier les erreurs réalisées par le modèle. Ainsi, plus le modèle est correct, et plus ces métriques sont basses.
 
 Le coefficient de détermination, quant à lui, nous donne une appréciation intelligible de la qualité du modèle : il est assimilable à un score où 1 équivaut à un modèle parfait.
 Plus le modèle est correct, plus le coefficient de détermination sera proche de 1.
-
-### Métriques
 
 ![résultats](./media/resultats_evaluations.png)
 
