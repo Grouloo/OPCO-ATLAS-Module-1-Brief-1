@@ -1,4 +1,4 @@
-# Bienvenue dans ce projet d'IA
+# Module 1 Brief 1
 
 Installation :
 
@@ -40,7 +40,7 @@ En revanche, en l'entraînant plus longuement, nous pouvons voir qu'il devient p
 
 Le programme nous affiche également un graphique lié à l'entraînement du modèle lors de la troisième évaluation.
 
-Ce graphique représente l'évolution de la valeur de _loss_, c'est-à-dire une quantification des erreurs de prédiction du modèle (ici l'erreur quadratique moyenne) en fonction du nombre d'epochs (c'est-à-dire une revue complète du dataser d'entraînement).
+Ce graphique représente l'évolution de la valeur de _loss_, c'est-à-dire une quantification des erreurs de prédiction du modèle (ici l'erreur quadratique moyenne) en fonction du nombre d'epochs (c'est-à-dire le nombre d'ingestions du dataset d'entraînement complet par le modèle).
 
 ![loss](./media/loss.png)
 
