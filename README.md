@@ -12,6 +12,14 @@ Installation des dépendances :
 
     pip install -r requirements.txt
 
+Lancer MLFlow :
+
+    mlflow ui --port 5000
+
+Lancer la procédure d'entraînement :
+
+    python train.py
+
 ## Résultats des évaluations
 
 Le programme permet d'évaluer les performances d'un modèle qui prédit le montant d'un prêt à partir des caractéristiques socio-démographiques d'un individu.
