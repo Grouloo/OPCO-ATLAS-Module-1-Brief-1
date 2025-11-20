@@ -1,5 +1,6 @@
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
+from modules.evaluate import evaluate_performance
 
 def create_nn_model(input_dim):
     """
@@ -16,7 +17,11 @@ def train_model(model, X, y, X_val=None, y_val=None, epochs=50, batch_size=32, v
     hist = model.fit(X, y, 
                 validation_data=(X_val, y_val) if X_val is not None and y_val is not None else None,
                 epochs=epochs, batch_size=batch_size, verbose=verbose)
-    return model , hist
+
+    y_pred = model_predict(model, X_val)
+    metrics = evaluate_performance(y_val, y_pred) 
+
+    return model , hist, metrics
 
 def model_predict(model, X):
     y_pred = model.predict(X).flatten()

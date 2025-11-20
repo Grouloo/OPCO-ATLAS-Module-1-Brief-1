@@ -13,7 +13,7 @@ def draw_loss(history):
     """
     Affiche les courbes de loss et val_loss de l'historique d'entraînement.
     """
-    plt.figure(figsize=(10, 6))
+    fig = plt.figure(figsize=(10, 6))
     plt.plot(history.history['loss'], label='Loss (Entraînement)')
     plt.plot(history.history['val_loss'], label='Val Loss (Validation)', linestyle='--')
     plt.title('Courbes de Loss et Val Loss')
@@ -21,4 +21,4 @@ def draw_loss(history):
     plt.ylabel('Loss')
     plt.legend()
     plt.grid(True)
-    plt.show()    
+    return fig
