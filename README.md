@@ -64,11 +64,11 @@ En ajoutant aux résultats des entraînements une évaluation des performances d
 
 Nous pouvons voir que les deux modèles ayant été entraînés sur le nouveau dataset sont bien plus performants que l'ancien modèle (Coefficient de détermination à 0.88 pour les nouveaux, contre 0.76 pour l'ancien), que ce soit sur les nouvelles données comme sur les anciennes, même s'ils restent bien plus performants sur des données récentes.
 
-(Nous devons toutefois noter que les deux modèles récents ont été entraînés sur 100 epochs, mais nous ne conaissons pas les conditions d'enraînement de l'ancien modèle, mais il serait étonnant que cette différence de performances sur les anciennes données n'y soit pas lié.)
+(Nous devons toutefois noter que les deux modèles récents ont été entraînés sur 100 epochs, mais nous ne connaissons pas les conditions d'enraînement de l'ancien modèle, mais il serait étonnant que cette différence de performances sur les anciennes données n'y soit pas liée.)
 
 En revanche, ces métriques seules ne permettent pas de savoir lequel des deux modèles est réellement le meilleur, les différences de MAE et de MSE étant ici négligeables.
 
-Heureusement, nous avons pu enregistrer les courbes de loss issues des entraînements et validations des modèles, et nous pouvons donc y jeter un oeil afin de mieux les appréhender.
+Heureusement, nous avons pu enregistrer dans MLFlow les courbes de loss issues des entraînements et validations des modèles, et nous pouvons donc y jeter un oeil afin de mieux les appréhender.
 
 ### Loss du modèle ré-entraîné
 
