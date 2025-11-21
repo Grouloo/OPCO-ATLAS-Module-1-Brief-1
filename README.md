@@ -74,6 +74,10 @@ Nous pouvons voir que les deux modèles ayant été entraînés sur le nouveau d
 
 Le modèle le plus performant des trois est l'ancien modèle ré-entraîné, qui est meilleur que les deux autres sur les deux jeux de validation.
 
+Il peut paraître étonnant que l'ancien modèle soit toujours le moins performant, y compris sur l'ancien jeu de données, mais il faut garder en tête que nous ne connaissons pas ses conditions d'entraînement.
+
+Les deux modèles entraînés ici l'ont été sur 50 epochs. Il est possible que l'ancien modèle ait été entraîné moins longtemps, ce qui expliquerait cette différence de performances sur les anciennes données.
+
 ### Loss du modèle ré-entraîné
 
 ![loss modèle ré-entraîné](./media/loss_modele_reentraine.png)
