@@ -35,8 +35,6 @@ _, old_X_test, _, old_y_test = split(old_X, old_y)
 new_X_train, new_X_test, new_y_train, new_y_test = split(new_X, new_y)
 
 with mlflow.start_run(run_name = "Évaluation de l'ancien modèle"):
-    epochs = 100
-    mlflow.log_param("epochs", epochs)
     mlflow.log_input(new_dataset)
 
     old_y_pred = model_predict(old_model, old_X_test)
@@ -53,7 +51,7 @@ with mlflow.start_run(run_name = "Évaluation de l'ancien modèle"):
     mlflow.sklearn.log_model(old_model, "Ancien  modèle")
 
 with mlflow.start_run(run_name = "Ré-entraînement de l'ancien modèle"):
-    epochs = 100
+    epochs = 50
     mlflow.log_param("epochs", epochs)
     mlflow.log_input(new_dataset)
     retrained_old_model, hist, metrics = train_model(old_model, new_X_train, new_y_train, X_val=new_X_test, y_val=new_y_test, epochs=epochs)
@@ -72,7 +70,7 @@ with mlflow.start_run(run_name = "Ré-entraînement de l'ancien modèle"):
     mlflow.sklearn.log_model(old_model, "Ancien modèle ré-entraîné")
 
 with mlflow.start_run(run_name = "Entraînement du nouveau modèle"):
-    epochs = 100
+    epochs = 50
     mlflow.log_param("epochs", epochs)
     mlflow.log_input(new_dataset)
     new_model = create_nn_model(new_X_train.shape[1])

@@ -70,13 +70,9 @@ En ajoutant aux résultats des entraînements une évaluation des performances d
 
 ![comparatifs](./media/comparatifs_modèles.png)
 
-Nous pouvons voir que les deux modèles ayant été entraînés sur le nouveau dataset sont bien plus performants que l'ancien modèle (Coefficient de détermination à 0.88 pour les nouveaux, contre 0.76 pour l'ancien), que ce soit sur les nouvelles données comme sur les anciennes, même s'ils restent bien plus performants sur des données récentes.
+Nous pouvons voir que les deux modèles ayant été entraînés sur le nouveau dataset sont bien plus performants que l'ancien modèle, que ce soit sur les nouvelles données comme sur les anciennes, même s'ils restent bien plus performants sur des données récentes.
 
-(Nous devons toutefois noter que les deux modèles récents ont été entraînés sur 100 epochs, mais nous ne connaissons pas les conditions d'enraînement de l'ancien modèle, mais il serait étonnant que cette différence de performances sur les anciennes données n'y soit pas liée.)
-
-En revanche, ces métriques seules ne permettent pas de savoir lequel des deux modèles est réellement le meilleur, les différences de MAE et de MSE étant ici négligeables.
-
-Heureusement, nous avons pu enregistrer dans MLFlow les courbes de loss issues des entraînements et validations des modèles, et nous pouvons donc y jeter un oeil afin de mieux les appréhender.
+Le modèle le plus performant des trois est l'ancien modèle ré-entraîné, qui est meilleur que les deux autres sur les deux jeux de validation.
 
 ### Loss du modèle ré-entraîné
 
@@ -86,11 +82,9 @@ Heureusement, nous avons pu enregistrer dans MLFlow les courbes de loss issues d
 
 ![loss nouveau modèle](./media/loss_nouveau_modele.png)
 
-Nous pouvons constater grâce à ces courbes que le modèle ré-entraîné montre une courbe de val loss divergente de sa courbe de loss. Cela signifie que ce modèle est sur-entraîné, et qu'il a par conséquent du mal à généraliser la logique derrière ses données d'entraînement.
+Nous pouvons constater grâce à ces courbes que le modèle ré-entraîné montre une courbe de val loss divergente de sa courbe de loss. Cela signifie que ce modèle commence à présenter des risques de sur-entraînement, et qu'il a par conséquent du mal à généraliser la logique derrière ses données d'entraînement.
 
-Pour l'instant, les performances des deux modèles semblent relativement proches, mais il y a de grandes chances pour que l'ancien modèle devienne de plus en plus inefficace à chaque ré-entraînement.
-
-Le nouveau modèle ne présentant pas un tel problème, il semble préférable de le choisir pour ne pas prendre de risque inutile.
+Bien que ce modèle soit pour l'instant le plus performant, il conviendra d'être prudent lors de ses futurs ré-entraînement, puisque les valeurs de _loss_ et de _val loss_ risquent de continuer à diverger, dégradant à terme ses performances.
 
 ## Le modèle d'IA
 
